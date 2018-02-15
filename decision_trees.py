@@ -14,12 +14,12 @@ y = data[:,2]
 # You won't need to, but if you'd like, play with hyperparameters such
 # as max_depth and min_samples_leaf and see what they do to the decision
 # boundary.
-model = DecisionTreeClassifier(max_depth = 7, min_samples_leaf = 10)
+model = DecisionTreeClassifier()
 
 # TODO: Fit the model.
 model.fit(X,y)
 # TODO: Make predictions. Store them in the variable y_pred.
-y_pred = None
+y_pred = model.predict(X)
 
 # TODO: Calculate the accuracy and assign it to the variable acc.
-acc = None
+acc = accuracy_score(y_pred,y)
