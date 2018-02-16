@@ -52,3 +52,18 @@ train_accuracy = accuracy_score(y_train,y_train_pred)
 test_accuracy = accuracy_score(y_test,y_test_pred)
 print('The training accuracy is', train_accuracy)
 print('The testing accuracy is', test_accuracy)
+
+# Improving the model
+improved_model = DecisionTreeClassifier(max_depth=5,min_samples_leaf=8,min_samples_split=30)
+improved_model.fit(features, outcomes)
+
+# Making Predictions
+improved_y_train_pred = improved_model.predict(X_train)
+improved_y_test_pred = improved_model.predict(X_test)
+
+# Calculating the accuracy
+from sklearn.metrics import accuracy_score
+improved_train_accuracy = accuracy_score(y_train,improved_y_train_pred)
+improved_test_accuracy = accuracy_score(y_test,improved_y_test_pred)
+print('The training accuracy is', improved_train_accuracy)
+print('The testing accuracy is', improved_test_accuracy)
